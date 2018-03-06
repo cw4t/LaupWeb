@@ -1,0 +1,392 @@
+.c_table_full {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  max-height: 80%;
+  min-height: 100px;
+  width: 500px;
+  margin-left: -250px;
+  text-align: center;
+  border: 2px solid #438eb9;
+  z-index: 999999;
+  border-radius: 5px;
+  background-color: white;
+  overflow: auto;
+  padding: 30px;
+}
+
+#c_table_do_add,
+#c_table_do_import,
+#c_table_do_cancel,
+#c_table_do_close {
+  border-top: 3px solid #438eb9;
+  height: 24px;
+  line-height: 24px;
+  text-decoration:none;
+}
+
+.c_table_row input, .c_table_row select {
+  height: 24px;
+  line-height: 24px;
+  font-size: 1.05rem !default;
+}
+
+.c_table_row input[type="file"] {
+  height: 24px;
+  line-height: 24px;
+  font-size: 1.05rem !default;
+}
+
+.c_table_nas {
+  width: 100%;
+  overflow: auto;
+  max-height: 99999px;
+}
+
+.c_table_cfg_mq {
+  width: 100%;
+  overflow: auto;
+  max-height: 99999px;
+}
+
+.c_table_cfg_properties {
+  width: 100%;
+  overflow: auto;
+  max-height: 99999px;
+}
+
+.c_table_cfg_config {
+  width: 100%;
+  overflow: auto;
+  max-height: 99999px;
+}
+
+.c_table_cfg_schedule {
+  width: 100%;
+  overflow: auto;
+  max-height: 99999px;
+}
+
+.c_table_cfg_errorcode {
+  width: 100%;
+  overflow: auto;
+  max-height: 99999px;
+}
+
+.c_table_a_record {
+  width: 100%;
+  overflow: auto;
+  max-height: 99999px;
+}
+
+.c_table_new_nas {
+  width: 100%;
+  overflow: auto;
+  max-height: 99999px;
+}
+
+.c_table_ogg {
+  width: 100%;
+  overflow: auto;
+  max-height: 99999px;
+}
+
+.c_table_firewall {
+  width: 100%;
+  overflow: auto;
+  max-height: 99999px;
+}
+
+.c_table_auto_firewall {
+  width: 100%;
+  overflow: auto;
+  max-height: 99999px;
+}
+
+.c_table_firewall_expand {
+  width: 100%;
+  overflow: auto;
+  max-height: 99999px;
+}
+
+.c_table_sqlreopen {
+  width: 100%;
+  overflow: auto;
+  max-height: 99999px;
+}
+
+.c_table_sqldatapatch {
+  width: 100%;
+  overflow: auto;
+  max-height: 99999px;
+}
+
+
+.c_table_vip {
+  width: 100%;
+  overflow: auto;
+  max-height: 99999px;
+}
+
+.c_table_f5andctrix {
+  width: 100%;
+  overflow: auto;
+  max-height: 99999px;
+}
+
+.c_table_sftp {
+  width: 100%;
+  overflow: auto;
+  max-height: 99999px;
+}
+
+.c_table_cfg_schedule table,
+.c_table_cfg_errorcode table,
+.c_table_cfg_config table,
+.c_table_cfg_mq table,
+.c_table_cfg_properties table,
+.c_table_nas table,
+.c_table_a_record table,
+.c_table_new_nas table,
+.c_table_vip table,
+.c_table_f5andctrix table,
+.c_table_ogg table,
+.c_table_firewall table,
+.c_table_auto_firewall table,
+.c_table_firewall_expand table,
+.c_table_sqlreopen table,
+.c_table_sqldatapatch table,
+.c_table_sftp table {
+  font-size: 1.05rem !default;
+  line-height: 25px;
+  border-spacing: 0;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+.c_table_cfg_schedule table a,
+.c_table_cfg_errorcode table a,
+.c_table_cfg_config table a,
+.c_table_cfg_mq table a,
+.c_table_cfg_properties table a,
+.c_table_nas table a,
+.c_table_a_record table a,
+.c_table_new_nas table a,
+.c_table_vip table a,
+.c_table_f5andctrix table a,
+.c_table_ogg table a,
+.c_table_firewall table a,
+.c_table_auto_firewall table a,
+.c_table_firewall_expand table a,
+.c_table_sqldatapatch table a,
+.c_table_sftp table a {
+  font-size: 1.05rem !default;
+  line-height: 24px;
+  color: white;
+}
+
+.c_table_cfg_schedule table thead,
+.c_table_cfg_errorcode table thead,
+.c_table_cfg_config table thead,
+.c_table_cfg_mq table thead,
+.c_table_cfg_properties table thead,
+.c_table_nas table thead,
+.c_table_a_record table thead,
+.c_table_new_nas table thead,
+.c_table_vip table thead,
+.c_table_f5andctrix table thead,
+.c_table_ogg table thead,
+.c_table_firewall table thead,
+.c_table_auto_firewall table thead,
+.c_table_firewall_expand table thead,
+.c_table_sqlreopen table thead,
+.c_table_sqldatapatch table thead,
+.c_table_sftp table thead{
+  line-height: 24px;
+  height: 24px;
+}
+
+.c_table_cfg_schedule table td,
+.c_table_cfg_errorcode table td,
+.c_table_cfg_config table td,
+.c_table_cfg_mq table td,
+.c_table_cfg_properties table td,
+.c_table_nas table td,
+.c_table_a_record table td,
+.c_table_new_nas table td,
+.c_table_vip table td,
+.c_table_f5andctrix table td,
+.c_table_ogg table td,
+.c_table_firewall table td,
+.c_table_auto_firewall table td,
+.c_table_firewall_expand table td,
+.c_table_sqlreopen table td,
+.c_table_sqldatapatch table td,
+.c_table_sftp table td {
+  border-bottom: 1px solid black;
+  padding: 0px 5px;
+  height: 24px;
+  line-height: 24px;
+}
+
+.c_table_cfg_schedule table th,
+.c_table_cfg_errorcode table th,
+.c_table_cfg_config table th,
+.c_table_cfg_mq table th,
+.c_table_cfg_properties table th,
+.c_table_nas table th,
+.c_table_a_record table th,
+.c_table_new_nas table th,
+.c_table_ogg table th,
+.c_table_firewall table th,
+.c_table_auto_firewall table th,
+.c_table_firewall_expand table th,
+.c_table_sqlreopen table th,
+.c_table_sqldatapatch table th,
+.c_table_vip table th,
+.c_table_f5andctrix table th,
+.c_table_sftp table th {
+  border-bottom: 1px solid black;
+  padding: 0px 5px;
+  height: 24px;
+  line-height: 24px;
+}
+
+.c_table_cfg_schedule table td:hover,
+.c_table_cfg_errorcode table td:hover,
+.c_table_cfg_config table td:hover,
+.c_table_cfg_mq table td:hover,
+.c_table_cfg_properties table td:hover,
+.c_table_nas table td:hover,
+.c_table_a_record table td:hover,
+.c_table_new_nas table td:hover,
+.c_table_vip table td:hover,
+.c_table_f5andctrix table td:hover,
+.c_table_ogg table td:hover,
+.c_table_firewall table td:hover,
+.c_table_auto_firewall table td:hover,
+.c_table_firewall_expand table td:hover,
+.c_table_sqlreopen table td:hover,
+.c_table_sqldatapatch table td:hover,
+.c_table_sftp table td:hover {
+  color: white;
+  background-color: #438eb9;
+}
+
+.c_table_cfg_schedule table th,
+.c_table_cfg_errorcode table th,
+.c_table_cfg_config table th,
+.c_table_cfg_mq table th,
+.c_table_cfg_properties table th,
+.c_table_nas table th,
+.c_table_a_record table th,
+.c_table_new_nas table th,
+.c_table_vip table th,
+.c_table_f5andctrix table th,
+.c_table_ogg table th,
+.c_table_firewall table th,
+.c_table_auto_firewall table th,
+.c_table_firewall_expand table th,
+.c_table_sqlreopen table th,
+.c_table_sqldatapatch table th,
+.c_table_sftp table th {
+  color: white;
+  background-color: #438eb9;
+}
+
+.c_table_cfg_schedule table td + td,
+.c_table_cfg_errorcode table td + td,
+.c_table_cfg_config table td + td,
+.c_table_cfg_mq table td + td,
+.c_table_cfg_properties table td + td,
+.c_table_cfg_schedule table th + th,
+.c_table_cfg_errorcode table th + th,
+.c_table_cfg_config table th + th,
+.c_table_cfg_mq table th + th,
+.c_table_cfg_properties table th + th,
+.c_table_nas td + td,
+.c_table_nas th + th,
+.c_table_a_record td + td,
+.c_table_a_record th + th,
+.c_table_new_nas td + td,
+.c_table_new_nas th + th,
+.c_table_ogg td + td,
+.c_table_ogg th + th,
+.c_table_firewall td + td,
+.c_table_firewall th + th,
+.c_table_auto_firewall td + td,
+.c_table_auto_firewall th + th,
+.c_table_firewall_expand td + td,
+.c_table_firewall_expand th + th,
+.c_table_sqlreopen td + td,
+.c_table_sqlreopen th + th,
+.c_table_sqldatapatch td + td,
+.c_table_sqldatapatch th + th,
+.c_table_vip td + td,
+.c_table_vip th + th,
+.c_table_f5andctrix td + td,
+.c_table_f5andctrix th + th,
+.c_table_sftp td + td,
+.c_table_sftp th + th {
+  border-left: 1px solid black;
+}
+
+.c_table_row {
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+  margin: 3px;
+  height: 25px;
+  line-height: 25px;
+  text-align: left;
+  font-size: 1.05rem !default;
+  z-index: 99999;
+}
+
+.c_table_row:nth-last-child(1) {
+  padding-top: 30px;
+}
+
+.c_table_row .c_table_col {
+  font-size: 1.05rem !default;
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+  width: 50%;
+  line-height: 25px;
+  height: 25px;
+  text-align: left;
+  display: inline-block;
+}
+
+.c_table_row_display {
+  border: 0px;
+  padding: 0px;
+  margin: 3px;
+  text-align: left;
+  font-size: 1.05rem !default;
+}
+
+.c_table_row_display .c_table_col_display {
+  font-size: 1.05rem !default;
+  margin: 0px;
+  border: 0px;
+  padding: 0px;
+  width: 50%;
+  vertical-align:top;
+  text-align: left;
+  display: inline-block;
+  overflow: auto;
+}
+
+td.c_table_tr_last_td {
+  color: white;
+  background-color: #438eb9;
+}
+
+.c_table_tr_view,
+.c_table_tr_del,
+.c_table_tr_edit {
+
+}

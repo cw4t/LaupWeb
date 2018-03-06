@@ -1,0 +1,181 @@
+{{define "login"}}
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>流程管理平台-AChain</title>
+  <!-- ACE -->
+  <link rel="stylesheet" href="/static/ace/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/static/ace/font-awesome/4.2.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/static/ace/fonts/fonts.googleapis.com.css" />
+  <link rel="stylesheet" href="/static/ace/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+  <link rel="stylesheet" href="/static/ace/css/ace-part2.min.css" class="ace-main-stylesheet" />
+  <link rel="stylesheet" href="/static/ace/css/ace-ie.min.css" />
+</head>
+
+<body class="login-layout">
+    <div class="main-container">
+      <div class="main-content">
+        <div class="row">
+          <div class="col-sm-10 col-sm-offset-1">
+            <div class="login-container">
+              <div class="center">
+                <h1>
+                  <i class="ace-icon fa fa-leaf green"></i>
+                  <span class="red">壹钱包</span>
+                  <span class="white" id="id-text2">堡垒机智能化日志分析</span>
+                </h1>
+                <h4 class="blue" id="id-company-text">&copy; 平安集团</h4>
+              </div>
+
+              <div class="space-6"></div>
+
+              <div class="position-relative">
+                <div id="login-box" class="login-box visible widget-box no-border">
+                  <div class="widget-body">
+                    <div class="widget-main">
+                      <h4 class="header blue lighter bigger">
+                        <i class="ace-icon fa fa-coffee green"></i>
+                        请使用UM账号和开机密码登陆
+                      </h4>
+
+                      <div class="space-6"></div>
+                      <form action="login.html" method="post">
+                        <fieldset>
+                          <label class="block clearfix">
+                            <span class="block input-icon input-icon-right">
+                              <input type="text" class="form-control" placeholder="UM" id="input_um"/>
+                              <i class="ace-icon fa fa-user"></i>
+                            </span>
+                          </label>
+
+                          <label class="block clearfix">
+                            <span class="block input-icon input-icon-right">
+                              <input type="password" class="form-control" placeholder="Password" id="input_password"/>
+                              <i class="ace-icon fa fa-lock"></i>
+                            </span>
+                          </label>
+
+                          <div class="space"></div>
+
+                          <div class="clearfix">
+                            <button id="submit_form_button" type="submit" class="width-35 pull-right btn btn-sm btn-primary" onclick="do_auth();return false;">
+                              <i class="ace-icon fa fa-key"></i>
+                              <span class="bigger-110">Login</span>
+                            </button>
+                          </div>
+
+                          <div class="space-4"></div>
+                        </fieldset>
+                      </form>
+
+
+                      <div class="space-6"></div>
+                    </div><!-- /.widget-main -->
+
+                  </div><!-- /.widget-body -->
+                </div><!-- /.login-box -->
+
+              </div><!-- /.position-relative -->
+
+              <div class="navbar-fixed-top align-right">
+                <br />
+                &nbsp;
+                <a id="btn-login-dark" href="#">Dark</a>
+                &nbsp;
+                <span class="blue">/</span>
+                &nbsp;
+                <a id="btn-login-blur" href="#">Blur</a>
+                &nbsp;
+                <span class="blue">/</span>
+                &nbsp;
+                <a id="btn-login-light" href="#">Light</a>
+                &nbsp; &nbsp; &nbsp;
+              </div>
+            </div>
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.main-content -->
+    </div><!-- /.main-container -->
+
+  <!-- Third -->
+  <script type="text/javascript" src="/static/js/jquery-3.1.0.min.js"></script>
+  <script type="text/javascript" src="/static/js/polyfill.min.js"></script>
+  <!-- ACE -->
+  <script src="/static/ace/js/ace-extra.min.js"></script>
+  <script src="/static/ace/js/html5shiv.min.js"></script>
+  <script src="/static/ace/js/respond.min.js"></script>
+  <script src="/static/ace/js/bootstrap.min.js"></script>
+  <script src="/static/ace/js/ace-elements.min.js"></script>
+  <script src="/static/ace/js/ace.min.js"></script>
+
+  <!-- inline scripts related to this page -->
+  <script type="text/javascript">
+    jQuery(function($) {
+     $(document).on('click', '.toolbar a[data-target]', function(e) {
+      e.preventDefault();
+      var target = $(this).data('target');
+      $('.widget-box.visible').removeClass('visible');//hide others
+      $(target).addClass('visible');//show target
+     });
+    });
+
+    //you don't need this, just used for changing background
+    jQuery(function($) {
+     $('#btn-login-dark').on('click', function(e) {
+      $('body').attr('class', 'login-layout');
+      $('#id-text2').attr('class', 'white');
+      $('#id-company-text').attr('class', 'blue');
+
+      e.preventDefault();
+     });
+     $('#btn-login-light').on('click', function(e) {
+      $('body').attr('class', 'login-layout light-login');
+      $('#id-text2').attr('class', 'grey');
+      $('#id-company-text').attr('class', 'blue');
+
+      e.preventDefault();
+     });
+     $('#btn-login-blur').on('click', function(e) {
+      $('body').attr('class', 'login-layout blur-login');
+      $('#id-text2').attr('class', 'white');
+      $('#id-company-text').attr('class', 'light-blue');
+
+      e.preventDefault();
+     });
+     $('#btn-login-light').click();
+    });
+
+    function do_auth() {
+      var um = $('#input_um').val()
+      var password = $('#input_password').val()
+      var data = {
+        um: um,
+        password: password
+      }
+      $.ajax(
+        "/v2/ajax/auth/token",
+        {
+          dataType: 'json',
+          data: JSON.stringify(data),
+          method: 'POST',
+          processdata: false,
+          async: true,
+          error: function(jqXHR, textStatus, errorThrown) {
+            console.log(jqXHR)
+            alert('UM或密码错误')
+          },
+          success: function(data, textStatus, jqXHR) {
+            window.location.href = '/'
+          }
+        }
+      )
+    }
+  </script>
+
+</body>
+</html>
+{{end}}

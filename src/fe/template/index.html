@@ -1,0 +1,256 @@
+{{define "index"}}
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>智能化日志分析平台-Laup</title>
+  <link rel="icon" href="/favicon.ico?v=1" />
+  <!-- ACE -->
+  <link rel="stylesheet" href="/static/ace/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/static/ace/font-awesome/4.2.0/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/static/ace/fonts/fonts.googleapis.com.css" />
+  <link rel="stylesheet" href="/static/ace/css/jquery.gritter.min.css" />
+  <link rel="stylesheet" href="/static/ace/css/ace.min.css" class="ace-main-stylesheet" id="main-ace-style" />
+  <link rel="stylesheet" href="/static/ace/css/ace-part2.min.css" class="ace-main-stylesheet" />
+  <link rel="stylesheet" href="/static/ace/css/ace-ie.min.css" />
+  <!-- Third -->
+  <link rel="stylesheet" href="/static/css/bootstrap-select.min.css" />
+  <link rel="stylesheet" href="/static/css/chosen.css" />
+  <link rel="stylesheet" href="/static/css/chosen2.css" />
+  <link rel="stylesheet" href="/static/css/multiple-select.css" />
+  <link rel="stylesheet" href="/static/css/jquery-ui.min.css" />
+  <link rel="stylesheet" href="/static/css/c_table.css?v=10" />
+  <link rel="stylesheet" href="/static/css/sql_submit.css?v=9" />
+
+</head>
+
+<body class="no-skin">
+  <div id="laup_loadding_page" style="display: block; width:100%;height:100%; margin: 0px auto;">
+    <div style="height: 100%; width: 100%; text-align:center;margin-top: 200px; font-size: 2em;">
+      <img src="/static/img/Blocks.gif" style="height: 2em; width: 2em;"></img>&nbspLaup正努力加载中...
+    </div>
+  </div>
+  <div id="app" style="display: none;">
+
+      <div id="navbar" class="navbar navbar-default">
+
+        <div class="navbar-container" id="navbar-container">
+            <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+                <span class="sr-only">Toggle sidebar</span>
+
+                <span class="icon-bar"></span>
+
+                <span class="icon-bar"></span>
+
+                <span class="icon-bar"></span>
+            </button>
+
+            <div class="navbar-header pull-left">
+                <router-link to="/over_view" class="navbar-brand" active-class="">
+                  <small>
+                      <i class="fa fa-leaf"></i>
+                      智能化堡垒机日志分析平台 Laup
+                  </small>
+                </router-link>
+            </div>
+
+            <div class="navbar-buttons navbar-header pull-right" role="navigation">
+                <ul class="nav ace-nav">
+                    <li class="light-blue">
+                        <a data-toggle="dropdown" href="#" class="dropdown-toggle">
+                            <span class="user-info">
+                                <small>Welcome,</small>
+                                {{`{{currentUM}}`}}
+                            </span>
+
+                            <i class="ace-icon fa fa-caret-down"></i>
+                        </a>
+
+                        <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
+                            <li>
+                                <a href="/v2/ajax/auth/logout">
+                                    <i class="ace-icon fa fa-power-off"></i>
+                                    注销
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div><!-- /.navbar-container -->
+    </div>
+
+    <div class="main-container" id="main-container">
+
+        <div id="sidebar" class="sidebar responsive">
+
+            <ul class="nav nav-list">
+                <!--全局概览 BEGIN-->
+                <template v-if="navLink === 'over_view'">
+                  <li class="active">
+                    <router-link to="/over_view">
+                      <i class="menu-icon fa fa-tachometer"></i>
+                      <span class="menu-text">全局概览</span>
+                    </router-link>
+
+                    <b class="arrow"></b>
+                  </li>
+                </template>
+                <template v-else>
+                  <li class="">
+                    <router-link to="/over_view">
+                      <i class="menu-icon fa fa-tachometer"></i>
+                      <span class="menu-text">全局概览</span>
+                    </router-link>
+
+                    <b class="arrow"></b>
+                  </li>
+                </template><!--全局概览 END-->
+
+                <!--行为分析 BEGIN-->
+                <template v-if="navLink === 'action_analysis'">
+                  <li class="active">
+                    <router-link to="/action_analysis">
+                      <i class="menu-icon fa fa-desktop"></i>
+                      <span class="menu-text">行为分析</span>
+                    </router-link>
+
+                    <b class="arrow"></b>
+                  </li>
+                </template>
+                <template v-else>
+                  <li class="">
+                    <router-link to="/action_analysis">
+                      <i class="menu-icon fa fa-desktop"></i>
+                      <span class="menu-text">行为分析</span>
+                    </router-link>
+
+                    <b class="arrow"></b>
+                  </li>
+                </template><!--行为分析 END-->
+
+                <!--告警配置 BEGIN-->
+                <template v-if="navLink === 'alarm_configuration'">
+                  <li class="active">
+                    <router-link to="/alarm_configuration">
+                      <i class="menu-icon fa fa-bullhorn"></i>
+                      <span class="menu-text">告警配置</span>
+                    </router-link>
+
+                    <b class="arrow"></b>
+                  </li>
+                </template>
+                <template v-else>
+                  <li class="">
+                    <router-link to="/alarm_configuration">
+                      <i class="menu-icon fa fa-bullhorn"></i>
+                      <span class="menu-text">告警配置</span>
+                    </router-link>
+
+                    <b class="arrow"></b>
+                  </li>
+                </template><!--告警配置 END-->
+
+
+            </ul><!-- /.nav-list -->
+
+            <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
+                <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
+            </div>
+
+        </div>
+
+        <div class="main-content">
+            <div class="main-content-inner">
+                <div class="breadcrumbs" id="breadcrumbs">
+
+                    <ul class="breadcrumb">
+                        <li>
+                            <i class="ace-icon fa fa-home home-icon"></i>
+                            Laup
+                        </li>
+                        <li class="active">{{`{{currentModule}}`}}</li>
+                    </ul><!-- /.breadcrumb -->
+                </div>
+
+                <div class="page-content">
+                    <div class="page-header">
+                        <h1>
+                            {{`{{currentModule}}`}}
+                            <small>
+                                <i class="ace-icon fa fa-angle-double-right"></i>
+                                {{`{{currentSubModule}}`}}
+                            </small>
+                        </h1>
+                    </div><!-- /.page-header -->
+
+                    <div class="row">
+                        <div class="col-xs-12">
+                                <!-- PAGE CONTENT BEGINS -->
+                                <router-view></router-view>
+                                <!-- PAGE CONTENT ENDS -->
+                        </div><!-- /.col -->
+                    </div><!-- /.row -->
+                </div><!-- /.page-content -->
+            </div>
+        </div><!-- /.main-content -->
+        <div style="clear:both"></div>
+        <div class="footer">
+            <div class="footer-inner">
+                <div class="footer-content">
+                    <span class="bigger-120">
+                        <span class="blue bolder"></span>
+                        壹钱包 2018
+                    </span>
+
+                    &nbsp; &nbsp;
+                </div>
+            </div>
+        </div>
+    </div><!-- /.main-container -->
+  </div>
+
+  <!-- Third -->
+  <script type="text/javascript" src="/static/js/jquery-3.1.0.min.js"></script>
+  <script type="text/javascript" src="/static/js/polyfill.min.js"></script>
+  <script type="text/javascript" src="/static/js/vue.js"></script>
+  <script type="text/javascript" src="/static/js/vue-router.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.bootpag.min.js"></script>
+  <script type="text/javascript" src="/static/js/bootstrap-select.min.js"></script>
+  <script type="text/javascript" src="/static/js/ajax-bootstrap-select.min.js"></script>
+  <script type="text/javascript" src="/static/js/chosen-1.1.jquery.js"></script>
+  <script type="text/javascript" src="/static/js/multiple-select.js"></script>
+  <script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/static/js/c_table.js?v=49"></script>
+  <script type="text/javascript" src="/static/js/sql_submit.js?v=14"></script>
+  <script type="text/javascript" src="/static/js/sql_upload.js?v=1"></script>
+
+  <!-- ACE -->
+  <script src="/static/ace/js/ace-extra.min.js"></script>
+  <script src="/static/ace/js/html5shiv.min.js"></script>
+  <script src="/static/ace/js/respond.min.js"></script>
+  <script src="/static/ace/js/bootstrap.min.js"></script>
+  <script src="/static/ace/js/ace-elements.min.js"></script>
+  <script src="/static/ace/js/ace.min.js"></script>
+  <script src="/static/ace/js/jquery.gritter.min.js"></script>
+  <script src="/static/ace/js/bootbox.min.js"></script>
+
+  <!-- Highcharts -->
+  <script type="text/javascript" src="/static/js/highcharts/highcharts.js"></script>
+
+  <!-- Laup -->
+  <script type="text/javascript" src="/static/js/laup/laup.min.js"></script>
+  
+  <!-- 页面相关JS -->
+  <script type="text/javascript">
+
+  $(document).ready(function(){
+
+  });
+  </script>
+</body>
+</html>
+{{end}}

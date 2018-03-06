@@ -1,0 +1,109 @@
+.sql_upload_full {
+
+}
+
+.sql_upload_affect_rows_input {
+  width: 100%;
+  font-size: 1.05rem !default;
+  line-height: 25px;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+.sql_upload_comment_input {
+  width: 100%;
+  font-size: 1.05rem !default;
+  line-height: 25px;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+table.sql_upload_table {
+  table-layout:fixed;
+  word-wrap:break-word;
+
+  font-size: 1.05rem !default;
+  line-height: 25px;
+  border-spacing: 0;
+  width: 100%;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+table.sql_upload_table thead {
+  line-height: 24px;
+  height: 24px;
+}
+
+table.sql_upload_table td {
+  border-bottom: 1px solid black;
+  padding: 0px 5px;
+  height: 24px;
+  line-height: 24px;
+}
+
+table.sql_upload_table th {
+  border-bottom: 1px solid black;
+  padding: 0px 5px;
+  height: 24px;
+  line-height: 24px;
+}
+
+table.sql_upload_table th {
+  color: white;
+  background-color: #438eb9;
+}
+
+table.sql_upload_table td + td,
+table.sql_upload_table th + th {
+  border-left: 1px solid black;
+}
+
+.sql_upload_record_checkresult {
+
+}
+
+.sql_upload_attachment_file {
+
+}
+
+.sql_upload_attachment_download {
+
+}
+
+.sql_upload_seq {
+  width: 100%;
+  font-size: 1.05rem !default;
+  line-height: 25px;
+  border: 0px;
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+}
+
+.sql_upload_attachment_successful_msg {
+  font-size: 1.05rem !default;
+  line-height: 25px;
+  text-align: center;
+  margin-right: 5px;
+  background-color: green;
+}
+.sql_upload_attachment_failed_msg {
+  font-size: 1.05rem !default;
+  line-height: 25px;
+  text-align: center;
+  margin-right: 5px;
+  background-color: red;
+}
+
+.sql_upload_attachment_upload_button,
+.sql_upload_attachment_del_button {
+  font-size: 1.05rem !default;
+  line-height: 25px;
+  text-align: center;
+  margin-right: 5px;
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$USER_HOME$/PythonPro/.idea/PythonPro.iml" filepath="$USER_HOME$/PythonPro/.idea/PythonPro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/laup.iml" filepath="$PROJECT_DIR$/.idea/laup.iml" />
+      <module fileurl="file://$USER_HOME$/mygo/.idea/mygo.iml" filepath="$USER_HOME$/mygo/.idea/mygo.iml" />
+      <module fileurl="file://$USER_HOME$/MLProjects/vue/.idea/vue.iml" filepath="$USER_HOME$/MLProjects/vue/.idea/vue.iml" />
+    </modules>
+  </component>
+</project>
