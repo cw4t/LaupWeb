@@ -25,8 +25,8 @@ type WWWOptions struct {
 	// Token过期时间(小时)
 	TokenExpire uint64
 
-	// SSO退出重定向地址
-	//SSOLogoutURL string
+	// USO退出重定向地址
+	//USOLogoutURL string
 
 	// LAUP用户名
 	LAUPUsername string
@@ -41,12 +41,12 @@ type WWWOptions struct {
 	// MySQL 最大闲置连接数
 	DBMaxIdleConn	int
 
-	// SSO API 地址
-	SSOApiAddress	string
-	// SSO AUTH API
-	SSOAuthAPI string
-	// SSO Logout 重定向地址
-	SSOLogoutURL string
+	// USO API 地址
+	USOApiAddress	string
+	// USO AUTH API
+	USOAuthAPI string
+	// USO Logout 重定向地址
+	USOLogoutURL string
 }
 
 var Options WWWOptions
@@ -60,7 +60,7 @@ func (o *WWWOptions) InitOptions() {
 	flag.StringVar(&o.TemplateFilePath, "template_path", "./src/fe/template/", "Template file path")
 	flag.Uint64Var(&o.CookieExpire, "cookie_expire", 24*30, "cookie expiration time")
 	flag.Uint64Var(&o.TokenExpire, "token_expire", 24*60, "token expiration time")
-	flag.StringVar(&o.SSOLogoutURL, "sso_logout_url", "http://sso.pinganfu.net/logout?referer=http://achain.pinganfu.net/ssovalidation.html", "SSOLogoutURL")
+	flag.StringVar(&o.USOLogoutURL, "sso_logout_url", "http://uso.test.cn/logout?referer=http://xx.test.cn/usovarify.html", "USOLogoutURL")
 
 	flag.StringVar(&o.LAUPUsername, "padb_username", "admin", "LAUPUsername")
 	flag.StringVar(&o.LAUPPassword, "padb_password", "password", "LAUPPassword")
