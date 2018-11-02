@@ -207,8 +207,8 @@ var userInfoCache = {};
 var Auth = (function ($) {
 
   var USER_INFO_URL = '/v2/ajax/auth/info';
-  var LOGIN_PAGE = 'http://sso.pinganfu.net/login?referer=';
-  var ACHAIN_VALIDATION = "http://achain.pinganfu.net/ssovalidation.html";
+  var LOGIN_PAGE = 'http://sso.xxx/login?referer=';
+  var YYY_VALIDATION = "http://yyy.xxx/ssovalidation.html";
 
   var Auth = (function () {
     function Auth() {
@@ -234,7 +234,7 @@ var Auth = (function ($) {
           console.log('登陆失败');
           console.log(jqXHR);
           // 登陆失败则获取跳转页面地址
-          window.location.href = '' + LOGIN_PAGE + ACHAIN_VALIDATION;
+          window.location.href = '' + LOGIN_PAGE + YYY_VALIDATION;
         });
       }
     }, {

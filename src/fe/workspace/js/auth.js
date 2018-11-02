@@ -5,8 +5,8 @@ var userInfoCache = {}
 const Auth = (($) => {
 
   const USER_INFO_URL = '/v2/ajax/auth/info'
-  const LOGIN_PAGE = 'http://sso.pinganfu.net/login?referer='
-  const ACHAIN_VALIDATION = "http://achain.pinganfu.net/ssovalidation.html"
+  const LOGIN_PAGE = 'http://sso.xxx/login?referer='
+  const YYY_VALIDATION = "http://yyy.xxx/ssovalidation.html"
 
   class Auth {
     constructor() {
@@ -30,7 +30,7 @@ const Auth = (($) => {
           console.log('登陆失败')
           console.log(jqXHR)
           // 登陆失败则获取跳转页面地址
-          window.location.href = `${LOGIN_PAGE}${ACHAIN_VALIDATION}`
+          window.location.href = `${LOGIN_PAGE}${YYY_VALIDATION}`
         }
       )
     }
